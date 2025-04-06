@@ -7,7 +7,7 @@ const UserInputs = () => {
     Online_Security: "",
     Tech_Support: "",
     Monthly_charges: "",
-    paper_less_Billing: "",
+    Paper_less_Billing: "",
     Senior_citizen: ""
   });
 
@@ -31,15 +31,18 @@ const UserInputs = () => {
     }
   };
 
+  // Define specific order for input fields
+  const inputOrder = ["Tenure", "Online_Security", "Tech_Support", "Monthly_charges", "Paper_less_Billing", "Senior_citizen"];
+
   return (
     <div className="App">
       <header className="header">Welcome to the Prediction Page!</header>
       <div className="box">
         <p>Enter values below and get predictions:</p>
         <form>
-          {Object.keys(inputs).map((key, index) => (
-            <div key={index}>
-              <label htmlFor={key}>Input {index + 1}:</label>
+          {inputOrder.map((key) => (
+            <div key={key}>
+              <label htmlFor={key}>{key.replace(/_/g, " ")}:</label> {/* This removes underscores */}
               <input
                 type="text"
                 id={key}
