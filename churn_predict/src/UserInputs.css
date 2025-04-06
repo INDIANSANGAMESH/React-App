@@ -1,0 +1,50 @@
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px 0;
+    color: black;
+  }
+  
+  .box {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  input {
+    padding: 8px;
+    width: 80%;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .blur-button {
+    padding: 10px 20px;
+    margin-top: 15px;
+    background: rgba(0, 123, 255, 0.7); /* Blur effect with opacity */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .blur-button:hover {
+    background: rgba(0, 123, 255, 0.9);
+  }
+  
+  h2 {
+    color: #333;
+    margin-top: 15px;
+  }
