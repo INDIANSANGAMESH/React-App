@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./UserInputs.css"; // Ensure you have the required CSS setup
+import "./UserInputs.css";
 
 const UserInputs = () => {
   const [inputs, setInputs] = useState({
@@ -18,14 +18,26 @@ const UserInputs = () => {
     setInputs((prev) => ({ ...prev, [name]: value }));
   };
 
-  const predict = async (inputs) => {
-    return Object.values(inputs).map(Number).reduce((a, b) => a + b, 0); // Example: sum of inputs
-  };
-
   const handlePrediction = async () => {
     try {
-      const result = await predict(inputs);
-      setPrediction(result);
+      /*const response = await fetch("http://127.0.0.1:5000/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(inputs), // Send form inputs to Flask API
+      }*/
+    
+      const response = await fetch("http://127.0.0.1:5000/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(inputs),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch prediction from server");
+      }
+
+      const result = await response.json();
+      setPrediction(result.prediction);
     } catch (error) {
       setPrediction(`Error: ${error.message}`);
     }
