@@ -1,29 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./App.css";
-
-// Import your new images
-import NewImage1 from "./Machine1.png";
-import NewImage2 from "./Machine2.png";
+import "./Homepage.css";
 
 const HomePage = () => {
   const navigate = useNavigate();
 
   const handleStartClick = () => {
-    navigate("/next"); // Redirects to the next page
+    navigate("/next");
   };
 
   return (
     <div className="App">
       <div className="container">
-        {/* Background Images */}
-        <img src={NewImage1} alt="Graphic 1" className="image top-left" />
-        <img src={NewImage2} alt="Graphic 2" className="image bottom-right" />
-
-        {/* Content Box */}
-        <div className="box">
-          <p className="bold-text">Hello All !!!</p>
-          <p>This is a churn Prediction ML</p>
+      <div className="box" style={{ width: '400px', height: '200px', backgroundColor: '#fff', color: '#000', borderRadius: '15px' }}>
+        <p style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Pacifico, cursive' }}>Hello All !!!</p>
+          <p style={{ fontFamily: 'Lato, sans-serif' }}>This is a churn Prediction ML</p>
           <button className="blue-button" onClick={handleStartClick}>
             Let's Start
           </button>
