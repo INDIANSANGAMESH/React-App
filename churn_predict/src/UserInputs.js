@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./UserInputs.css";
 
 const UserInputs = () => {
+  const navigate = useNavigate();
+
   const [rawInputs, setRawInputs] = useState({
     Tenure: "",
     Online_Security: "",
@@ -19,8 +22,6 @@ const UserInputs = () => {
     Paper_less_Billing: "",
     Senior_citizen: "",
   });
-
-  const [prediction, setPrediction] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -56,9 +57,18 @@ const UserInputs = () => {
       }
 
       const result = await response.json();
-      setPrediction(result.prediction);
+      const prediction = result.prediction;
+
+      if (prediction === 1) {
+        navigate("/positive"); // Redirect to positive result page
+      } else if (prediction === 0) {
+        navigate("/negative"); // Redirect to negative result page
+      } else {
+        alert("Unexpected prediction result!");
+      }
+
     } catch (error) {
-      setPrediction(`Error: ${error.message}`);
+      alert(`Error: ${error.message}`);
     }
   };
 
@@ -125,9 +135,6 @@ const UserInputs = () => {
         <button className="predict-button" onClick={handlePrediction}>
           Predict 🔍
         </button>
-        {prediction && (
-          <div className="prediction-output">Prediction: {prediction}</div>
-        )}
       </div>
     </div>
   );
