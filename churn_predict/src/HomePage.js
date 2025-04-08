@@ -13,8 +13,10 @@ const HomePage = () => {
     <div className="App">
       <div className="container">
         <div className="box">
-          <p className="bold-text">Hello All !!!</p>
-          <p className="bold-text" >This is a churn Prediction ML</p>
+          <p className="bold-text">HEY DUDE </p> 
+          <br />
+          <p className="bold-text" > I’m your friendly neighborhood churn predictor 🤖🤖🤖.<br />Just gimme some details and I'll tell you if someone’s planning to GHOST the company !!!</p>
+          <br />
           <button className="blue-button" onClick={handleStartClick}>
             Let's Start
           </button>
