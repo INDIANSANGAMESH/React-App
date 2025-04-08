@@ -33,7 +33,8 @@ def predict():
         
         # Return prediction as JSON response
         print("predict:",prediction.tolist())
-        return jsonify({"prediction": prediction.tolist()})
+        result = int(prediction[0])
+        return jsonify({"prediction": result})
     
     except Exception as e:
         # Handle errors gracefully
