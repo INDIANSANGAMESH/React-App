@@ -64,115 +64,70 @@ const UserInputs = () => {
 
   return (
     <div className="App">
-      <header className="header">🎯 Prediction Page 🚀</header>
-      <div className="box">
-        <p className="subtitle">Please Enter Your Details</p>
+      <div className="form-box">
+        <h2 className="form-title">Churn Prediction</h2>
         <form>
-          <label htmlFor="Tenure">Tenure:</label>
-          <input
-            type="number"
-            id="Tenure"
-            name="Tenure"
-            value={rawInputs.Tenure}
-            onChange={handleInputChange}
-            placeholder="Enter tenure (1-100)"
-          />
-
-          <label>Online Security:</label>
-          <div className="radio-group">
+          <div className="input-group">
+            <label>Tenure</label>
             <input
-              type="radio"
-              id="Online_Security_Yes"
-              name="Online_Security"
-              value="1"
+              type="number"
+              name="Tenure"
+              value={rawInputs.Tenure}
               onChange={handleInputChange}
+              placeholder="Tenure"
             />
-            <label htmlFor="Online_Security_Yes">Yes</label>
-            <input
-              type="radio"
-              id="Online_Security_No"
-              name="Online_Security"
-              value="0"
-              onChange={handleInputChange}
-            />
-            <label htmlFor="Online_Security_No">No</label>
-          </div>
-          
-          <label>Tech Support:</label>
-          <div className="radio-group">
-            <input
-              type="radio"
-              id="Tech_Support_Yes"
-              name="Tech_Support"
-              value="1"
-              onChange={handleInputChange}
-            />
-            <label htmlFor="Tech_Support_Yes">Yes</label>
-            <input
-              type="radio"
-              id="Tech_Support_No"
-              name="Tech_Support"
-              value="0"
-              onChange={handleInputChange}
-            />
-            <label htmlFor="Tech_Support_No">No</label>
           </div>
 
-          <label htmlFor="Monthly_charges">Monthly Charges:</label>
-          <input
-            type="number"
-            id="Monthly_charges"
-            name="Monthly_charges"
-            value={rawInputs.Monthly_charges}
-            onChange={handleInputChange}
-            placeholder="Enter charges (1-100)"
-          />
-
-          <label>Paperless Billing:</label>
-          <div className="radio-group">
-            <input
-              type="radio"
-              id="Paper_less_Billing_Yes"
-              name="Paper_less_Billing"
-              value="1"
-              onChange={handleInputChange}
-            />
-            <label htmlFor="Paper_less_Billing_Yes">Yes</label>
-            <input
-              type="radio"
-              id="Paper_less_Billing_No"
-              name="Paper_less_Billing"
-              value="0"
-              onChange={handleInputChange}
-            />
-            <label htmlFor="Paper_less_Billing_No">No</label>
+          <div className="input-group">
+            <label>Online Security</label>
+            <div className="radio-group">
+              <label><input type="radio" name="Online_Security" value="1" onChange={handleInputChange} /> Yes</label>
+              <label><input type="radio" name="Online_Security" value="0" onChange={handleInputChange} /> No</label>
+            </div>
           </div>
 
-          <label>Senior Citizen:</label>
-          <div className="radio-group">
+          <div className="input-group">
+            <label>Tech Support</label>
+            <div className="radio-group">
+              <label><input type="radio" name="Tech_Support" value="1" onChange={handleInputChange} /> Yes</label>
+              <label><input type="radio" name="Tech_Support" value="0" onChange={handleInputChange} /> No</label>
+            </div>
+          </div>
+
+          <div className="input-group">
+            <label>Monthly Charges</label>
             <input
-              type="radio"
-              id="Senior_citizen_Yes"
-              name="Senior_citizen"
-              value="1"
+              type="number"
+              name="Monthly_charges"
+              value={rawInputs.Monthly_charges}
               onChange={handleInputChange}
+              placeholder="Charges"
             />
-            <label htmlFor="Senior_citizen_Yes">Yes</label>
-            <input
-              type="radio"
-              id="Senior_citizen_No"
-              name="Senior_citizen"
-              value="0"
-              onChange={handleInputChange}
-            />
-            <label htmlFor="Senior_citizen_No">No</label>
+          </div>
+
+          <div className="input-group">
+            <label>Paperless Billing</label>
+            <div className="radio-group">
+              <label><input type="radio" name="Paper_less_Billing" value="1" onChange={handleInputChange} /> Yes</label>
+              <label><input type="radio" name="Paper_less_Billing" value="0" onChange={handleInputChange} /> No</label>
+            </div>
+          </div>
+
+          <div className="input-group">
+            <label>Senior Citizen</label>
+            <div className="radio-group">
+              <label><input type="radio" name="Senior_citizen" value="1" onChange={handleInputChange} /> Yes</label>
+              <label><input type="radio" name="Senior_citizen" value="0" onChange={handleInputChange} /> No</label>
+            </div>
           </div>
         </form>
 
-        <button className="blur-button" onClick={handlePrediction}>
-          Get My Prediction 💡
+        <button className="predict-button" onClick={handlePrediction}>
+          Predict 🔍
         </button>
-        {prediction && <h2 className="prediction-output">Prediction: {prediction}</h2>}
+        {prediction && (
+          <div className="prediction-output">Prediction: {prediction}</div>
+        )}
       </div>
     </div>
   );

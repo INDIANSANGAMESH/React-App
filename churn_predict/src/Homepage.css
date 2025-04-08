@@ -1,8 +1,8 @@
 .App {
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content:safe;
+    align-items:center;
 }
 
 .container {
@@ -12,19 +12,19 @@
     background-image: url('Background.png');
     background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: center;
+    display:grid;
+    justify-content:safe;
     align-items: center;
 }
 
 .box {
     text-align: center;
-    background-color: white; /* Changed */
-    color: black;             /* Changed */
+    background-color: rgb(6, 0, 0); 
+    color: black;             
     padding: 20px;
     border-radius: 15px;
     width: 400px;
-    height: 200px;
+    height: 130px;
 }
 
 
@@ -32,7 +32,7 @@
     font-family: 'Pacifico', cursive;
     font-size: 24px;
     font-weight: bold;
-    color: black;
+    color: wheat;
 }
 
 .blue-button {
